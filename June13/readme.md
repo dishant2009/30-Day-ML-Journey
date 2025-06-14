@@ -130,3 +130,65 @@ Virginica:  0.12
 Softmax + CE loss is not just about math — it reflects a model’s **confidence**. Encouraging the right kind of confidence is what drives better generalization and sharper decision boundaries.
 
 ---
+
+## 🔁 Recurrent Neural Networks (RNNs)
+
+**RNNs** are designed for sequential data. They remember information over time using a hidden state.
+
+### RNN Equation:
+```
+hₜ = f(Wxₜ + Uhₜ₋₁ + b)
+```
+
+Where:
+- \( hₜ \): current hidden state
+- \( hₜ₋₁ \): previous state
+- \( xₜ \): current input
+- \( W, U, b \): learned weights and bias
+
+---
+
+## 🔄 Why Use RNNs?
+
+RNNs are ideal when:
+- The **order** of inputs matters
+- You need to **remember previous inputs**
+- The input **length varies**
+
+Feedforward networks can't do this — they treat every input independently and require fixed-size inputs.
+
+---
+
+## 📦 RNNs Handle Variable Input Lengths
+
+Unlike MLPs, RNNs don’t require fixed-size input. They loop over each time step, and weights are reused.
+
+Examples:
+- Sentence “Hi” → 2 steps
+- Sentence “What’s up man?” → 4 steps
+
+✅ RNN handles both seamlessly.
+
+---
+
+## 🚫 Limitations of RNNs
+
+- **Vanishing gradients** over long sequences
+- Hard to remember things far back in time
+- Slow — can’t parallelize across time steps
+
+💡 That’s why **LSTMs** and **GRUs** were invented.
+
+---
+
+## 🧠 Final Takeaways
+
+- Softmax turns logits into probabilities
+- Cross-entropy tells us how wrong we are — and how much to correct
+- RNNs shine in NLP, audio, and time series — where context and order matter
+- Derivative of CE + softmax: `∂L/∂zᵢ = pᵢ - yᵢ` is critical in training
+
+---
+
+
+
